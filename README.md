@@ -13,7 +13,7 @@ HashMeDaddy is a fun Ethereum smart contract for hashing strings using the `kecc
 ## Prerequisites
 
 - A web browser
-- [MetaMask] or similar Ethereum wallet
+- [MetaMask](https://metamask.io/) or similar Ethereum wallet
 - [Remix IDE](https://remix.ethereum.org/)
 
 ## Setup and Deployment

@@ -1,11 +1,28 @@
 <!DOCTYPE html>
 <html>
-<head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive meta tag -->
     <title>HashMeDaddy Smart Contract</title>
     <style>
-        /* Your CSS here */
-        /* Feel free to add styling as you see fit! */
+        /* Making it look better on mobile */
+        #stringToHash, #hashMeDaddyButton {
+            font-size: 1.2em;  /* Increase font size */
+            padding: 12px;     /* Add more padding */
+            width: 45%;       /* 20% width */
+            margin-bottom: 10px;  /* Add margin to the bottom */
+        }
+
+        /* Make result text larger */
+        #hashResult {
+            font-size: 1.5em;
+            width: 80%;
+            overflow-wrap: break-word;
+        }
+        .special-paragraph {
+            max-width: 90%;
+            overflow-wrap: break-word;
+        }
+
     </style>
 </head>
 <body>
@@ -16,8 +33,8 @@
     <h2>Features</h2>
     <ul>
         <li><strong>Hashing:</strong> Easily hash strings.</li>
-        <li><strong>Ownership:</strong> Contract creator is the initial owner.</li>
-        <li><strong>Withdraw Funds:</strong> Owner can withdraw funds.</li>
+        <li><strong>Ownership:</strong> Contract creator is the initial owner. Ownership can be transferred.</li>
+        <li><strong>Withdraw Funds:</strong> Owner can withdraw funds sent to the contract.</li>
     </ul>
 
     <h2>Learn More</h2>
@@ -25,17 +42,18 @@
         <li><a href="https://twitter.com/HashMeDaddy" target="_blank">Twitter</a></li>
         <li><a href="https://github.com/Cryptocojak/HashMeDaddy" target="_blank">GitHub Repository</a></li>
         <li><a href="https://basescan.org/address/0xce5da1a42320176eb17f0d6c346208c674e97aaf#readContract" target="_blank">View on BaseScan</a></li>
+        <li><a href="keccak256-info.html" target="_blank">Learn More About Cryptography</a></li>
     </ul>
 
     <!-- New input field and button -->
     <input type="text" id="stringToHash" placeholder="Enter string to hash">
-    <button id="hashMeDaddyButton">Hash Me Daddy!</button>
-    <p>Result: <span id="hashResult"></span></p>
+    <button id="hashMeDaddyButton">Hash The Input !</button>
+    <p class="special-paragraph">Result: <span id="hashResult"></span></p>
 
     <script src="https://cdn.jsdelivr.net/npm/web3@1.5.0/dist/web3.min.js"></script>
     <script>
       // Initialize web3 with a default provider
-      const web3 = new Web3(new Web3.providers.HttpProvider('https://base-mainnet.g.alchemy.com/v2/[YOUR_API_KEY]'));
+      const web3 = new Web3(new Web3.providers.HttpProvider('https://base-mainnet.g.alchemy.com/v2/[YOUR_API_KEY_HERE]'));
       
       // Contract ABI and address
       const abi = [{"inputs":[{"internalType":"string","name":"_string","type":"string"}],"name":"hashMeDaddy","outputs":[{"internalType":"bytes32","name":"","type":"bytes32"}],"stateMutability":"pure","type":"function"}];

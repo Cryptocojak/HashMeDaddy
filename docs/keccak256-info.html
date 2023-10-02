@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Understanding Keccak256</title>
+    <style>
+        /* Using class to target specific images */
+        .small-image {
+          max-width: 90%;
+          height: auto;
+        }
+        .special-paragraph {
+          max-width: 90%;
+          overflow-wrap: break-word;
+        }
+      </style>      
+</head>
+<body>
+
+    <h1><strong>Understanding Keccak256</strong></h1>
+    
+    <!-- Add images -->
+    <img src="./keccak-pack.png" alt="helpful cigawrette pack" class="small-image">
+    <br>
+    <p class="special-paragraph">The Keccak algorithm is the work of Guido Bertoni, Joan Daemen (who also co-designed the Rijndael cipher with Vincent Rijmen), Michaël Peeters, and Gilles Van Assche.</p>
+    <p class="special-paragraph"> Keccak256 is a secure hash algorithm (SHA) used in Ethereum, many contracts use it to do things.  Using the HashMeDaddy smart contract, now anyone can input a string and use this hash function to return a hashed output.</p>
+    <p class="special-paragraph"> Let's think of some potential use cases... Imagine someone wanted to make a public guess about something but they don't want to reveal their guess to anyone.  They could hash their guess and tweet it. Then when it came time to reveal, they could prove what their guess was by retweeting the unhashed guess with the original hash.  Anyone could verify it by running the guess thru the hash function, and it would output the same answer!</p>
+    <p class="special-paragraph"> Every input will always have the same output.  Even though it's irreversible, it's also replicable.  If you change one letter you will get a different hash.  As well, you can feed it any length input and it will give you a fixed length output.</p>
+    
+    <img src="./sha-3.png" alt="sha-3 flowchart" class="small-image">
+    <p class="special-paragraph"> Here's a fun example: 0xb364479f610f498e739c4895452687f9fdbdf0cb9e0cc4ecda66a128575e24c9</p>
+    <p class="special-paragraph"> That's a hash of the street I live on.  If you figure out what it is, it will be trivial for you to reproduce that hash.  But you definitely won't be able to guess it, or reverse the hash process.  Cryptography is cool !</p>
+
+    <!-- Other resources and text -->
+    <p><strong>Additional information...</strong></p>
+    <ul>
+        <li><a href="https://en.wikipedia.org/wiki/Secure_Hash_Algorithms" target="_blank">Secure Hash Algorithms</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/SHA-3" target="_blank">SHA-3</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Cryptographic_hash_function" target="_blank">Cryptographic Hash Functions</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Sponge_function" target="_blank">Sponge Function</a></li>
+    </ul>
+    <br>
+    <!-- Link back to main page -->
+    <a href="index.html">Back to Main Page</a>
+
+</body>
+</html>

@@ -6,8 +6,8 @@ HashMeDaddy is a fun Ethereum smart contract for hashing strings using the `kecc
 
 ## Features
 
-- **Hashing**: Easily hash strings using the `hash` function.
-- **Ownership**: The contract creator is set as the initial owner.
+- **Hashing**: Easily hash strings using the `HashMeDaddy` function.
+- **Ownership**: The contract creator is set as the initial owner. Ownership can be transferred.
 - **Withdraw Funds**: The owner can withdraw any Ether stored in the contract.
 
 ## Prerequisites

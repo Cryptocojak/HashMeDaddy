@@ -1,7 +1,12 @@
 <!DOCTYPE html>
+<html>
 <head>
     <meta charset="UTF-8">
     <title>HashMeDaddy Smart Contract</title>
+    <style>
+        /* Your CSS here */
+        /* Feel free to add styling as you see fit! */
+    </style>
 </head>
 <body>
 
@@ -17,10 +22,35 @@
 
     <h2>Learn More</h2>
     <ul>
-        <li><a href="https://twitter.com/HashMeDaddy" target="_blank">Twitter!</a></li>
+        <li><a href="https://twitter.com/HashMeDaddy" target="_blank">Twitter</a></li>
         <li><a href="https://github.com/Cryptocojak/HashMeDaddy" target="_blank">GitHub Repository</a></li>
         <li><a href="https://basescan.org/address/0xce5da1a42320176eb17f0d6c346208c674e97aaf#readContract" target="_blank">View on BaseScan</a></li>
     </ul>
 
+    <!-- New input field and button -->
+    <input type="text" id="stringToHash" placeholder="Enter string to hash">
+    <button id="hashMeDaddyButton">Hash Me Daddy!</button>
+    <p>Result: <span id="hashResult"></span></p>
+
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.5.0/dist/web3.min.js"></script>
+    <script>
+      // Initialize web3 with a default provider
+      const web3 = new Web3(new Web3.providers.HttpProvider('https://base-mainnet.g.alchemy.com/v2/[YOUR_API_KEY]'));
+      
+      // Contract ABI and address
+      const abi = [{"inputs":[{"internalType":"string","name":"_string","type":"string"}],"name":"hashMeDaddy","outputs":[{"internalType":"bytes32","name":"","type":"bytes32"}],"stateMutability":"pure","type":"function"}];
+      const contractAddress = "0xCe5dA1a42320176EB17F0D6c346208c674E97AaF";
+      
+      // Initialize contract
+      const contract = new web3.eth.Contract(abi, contractAddress);
+
+      // Button to call hashMeDaddy function
+      const hashMeDaddyButton = document.getElementById("hashMeDaddyButton");
+      hashMeDaddyButton.addEventListener("click", async () => {
+        const stringToHash = document.getElementById("stringToHash").value;
+        const result = await contract.methods.hashMeDaddy(stringToHash).call();
+        document.getElementById("hashResult").innerText = result;
+      });
+    </script>
 </body>
 </html>

@@ -32,5 +32,9 @@ contract HashMeDaddy {
     owner.transfer(amount);
   }
 
+  receive() external payable {
+    emit FundsReceived(msg.sender, msg.value);
+  }
+
 }
 

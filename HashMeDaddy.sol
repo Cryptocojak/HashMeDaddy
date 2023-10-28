@@ -6,6 +6,7 @@ contract HashMeDaddy {
   address payable public owner;
   event OwnershipTransferred(address indexed oldOwner, address indexed newOwner);
   event FundsWithdrawn(address indexed owner, uint256 amount);
+  event FundsReceived(address indexed sender, uint256 amount); 
 
   constructor() {
   owner = payable(msg.sender);
